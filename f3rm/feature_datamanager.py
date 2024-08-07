@@ -14,7 +14,7 @@ from nerfstudio.utils.rich_utils import CONSOLE
 
 from f3rm.features.clip_extract import CLIPArgs, extract_clip_features
 from f3rm.features.dino_extract import DINOArgs, extract_dino_features
-from f3rm.features.dinov2_extract import DINOv2Args, extract_dinov2_features
+from f3rm.features.dinov2_extract import DINOv2Args, extract_dinov2_features, extract_dinov2_and_sam_features
 
 
 @dataclass
@@ -30,12 +30,14 @@ feat_type_to_extract_fn = {
     "CLIP": extract_clip_features,
     "DINO": extract_dino_features,
     "DINOv2": extract_dinov2_features,
+    "DINOv2_SAM": extract_dinov2_and_sam_features
 }
 
 feat_type_to_args = {
     "CLIP": CLIPArgs,
     "DINO": DINOArgs,
     "DINOv2": DINOv2Args,
+    "DINOv2_SAM": DINOv2Args,
 }
 
 
